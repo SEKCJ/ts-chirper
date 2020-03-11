@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { chirpsStore } from '../chirpstore'
+import chirpsStore from '../chirpstore'
 
 let chirpsRoute = express.Router();
 
@@ -22,7 +22,7 @@ chirpsRoute.put('/:id?', (req, res) => {
     if (id) {
         res.json(chirpsStore.UpdateChirp(id, req.body));
     } else {
-        res.send(chirpsStore.UpdateChirp());
+        res.send(400);
     }
 })
 
@@ -31,7 +31,7 @@ chirpsRoute.delete('/:id?', (req, res) => {
     if (id) {
         res.sendStatus(200).json(chirpsStore.DeleteChirp(id))
     } else {
-        res.json(chirpsStore.DeleteChirp());
+        res.status(400);
     }
 })
 

@@ -1,7 +1,7 @@
-const fs = require('fs');
+import * as fs from "fs";
 let chirps = { nextid: 0 };
 
-if(fs.existsSync('chirps.json')) {
+if (fs.existsSync('chirps.json')) {
     chirps = JSON.parse(fs.readFileSync('chirps.json'));
 }
 
@@ -32,10 +32,11 @@ let writeChirps = () => {
     fs.writeFileSync('chirps.json', JSON.stringify(chirps));
 };
 
-export let chirpsStore = {
+export default {
     CreateChirp: createChirp,
     DeleteChirp: deleteChirp,
     GetChirps: getChirps,
     GetChirp: getChirp,
     UpdateChirp: updateChirp
 }
+
