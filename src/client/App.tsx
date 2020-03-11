@@ -1,33 +1,25 @@
 import * as React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Chirps from './Components/chirps'
+// import { RouteComponentProps } from 'react-router-dom'
 
-class App extends React.Component<IAppProps, IAppState> {
-	constructor(props: IAppProps) {
-		super(props);
-		this.state = {
-			name: null
-		};
-	}
 
-	async componentDidMount() {
-		try {
-			let r = await fetch('/api/hello');
-			let name = await r.json();
-			this.setState({ name });
-		} catch (error) {
-			console.log(error);
-		}
-	}
+const App: React.FC<IAppProps> = props => {
 
-	render() {
-		return (
-			<main className="container my-5">
-				<h1 className="text-primary text-center">Hello {this.state.name}!</h1>
-			</main>
-		);
-	}
+	return (
+		<Router>
+			<h1>Hello!</h1>
+			<Switch>
+				<Route path="/" component={Chirps}/>
+			</Switch>
+		</Router>
+	);
+
 }
 
-export interface IAppProps {}
+export interface IAppProps {
+
+}
 
 export interface IAppState {
 	name: string;
