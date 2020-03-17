@@ -4,12 +4,12 @@ import { blankProps } from '../App'
 
 const Chirps: React.FC<blankProps> = props => {
 
-    const [chirps, setChirps] = useState<any[]>([])
+    const [chirps, setChirps] = useState<JSX.Element[]>([])
 
     let getChirps = async () => {
         try {
             let response = await fetch('/api/chirps')
-            let obj = await response.json()
+            let obj: Object = await response.json()
             makeCards(obj)
         } catch (err) {
             console.log(err)
@@ -19,13 +19,14 @@ const Chirps: React.FC<blankProps> = props => {
     let makeCards = (obj: any) => {
         let keys = Object.keys(obj);
         let arr = keys.map((element) => {
+            console.log(typeof element)
             return obj[element]
         })
-
+        
         arr.splice(-1, 1);
         keys.splice(-1, 1);
 
-        let cards = arr.map((element, index) => {
+        let cards: JSX.Element[] = arr.map((element, index) => {
             return (
                 <div className="card my-2 col-sm-8 mx-auto bg-info text-light" key={index}>
                     <div className="card-body">

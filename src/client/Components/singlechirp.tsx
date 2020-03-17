@@ -8,7 +8,7 @@ let SingleChirp: React.FC<iSingleProps> = ({ match: { params: { id } } }) => {
     let [nameval, setNameval] = useState<string>("")
     let [textval, setTextval] = useState<string>("");
 
-    let single = async (id: string) => {
+    let single = async (id: string) => {    
         let response = await fetch(`/api/chirps/${id}`);
         let json = await response.json();
         setNameval(json.chirp1);
