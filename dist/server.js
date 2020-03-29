@@ -130,18 +130,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nva
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express = __webpack_require__(/*! express */ \"express\");\r\nvar routes_1 = __webpack_require__(/*! ./routes */ \"./src/server/routes/index.ts\");\r\nvar cors = __webpack_require__(/*! cors */ \"cors\");\r\nvar app = express();\r\napp.use(cors());\r\napp.use(express.json());\r\napp.use(express.static('public'));\r\napp.use('/api', routes_1.default);\r\nvar port = process.env.PORT || 3000;\r\napp.listen(port, function () { return console.log(\"Server listening on port: \" + port); });\r\n\n\n//# sourceURL=webpack:///./src/server/server.ts?");
-
-/***/ }),
-
-/***/ "cors":
-/*!***********************!*\
-  !*** external "cors" ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"cors\");\n\n//# sourceURL=webpack:///external_%22cors%22?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express = __webpack_require__(/*! express */ \"express\");\r\nvar routes_1 = __webpack_require__(/*! ./routes */ \"./src/server/routes/index.ts\");\r\nvar app = express();\r\napp.use(express.json());\r\napp.use(express.static('public'));\r\napp.use('/api', routes_1.default);\r\nvar port = process.env.PORT || 3000;\r\napp.listen(port, function () { return console.log(\"Server listening on port: \" + port); });\r\n\n\n//# sourceURL=webpack:///./src/server/server.ts?");
 
 /***/ }),
 
