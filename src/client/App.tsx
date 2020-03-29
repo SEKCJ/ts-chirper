@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Chirps from './Components/chirps'
 import FormPost from './Components/formpost';
 import SingleChirp from './Components/singlechirp';
-// import { RouteComponentProps } from 'react-router-dom'
 
 
 const App: React.FC<blankProps> = props => {

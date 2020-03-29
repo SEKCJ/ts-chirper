@@ -19,7 +19,6 @@ const Chirps: React.FC<blankProps> = props => {
     let makeCards = (obj: any) => {
         let keys = Object.keys(obj);
         let arr = keys.map((element) => {
-            console.log(typeof element)
             return obj[element]
         })
         
